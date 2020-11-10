@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-import com.example.rbook.MyPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,8 +14,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,ViewPager.OnPageChangeListener {
 
     private Button home_btn;
-    private Button page2_btn;// = findViewById(R.id.secondPage);
-    private Button page3_btn;// = findViewById(R.id.thridPage);
+    private Button page2_btn;
+    private Button page3_btn;
 
     MyPagerAdapter adapter;
     ViewPager viewPager;
@@ -35,11 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         page2_btn = findViewById(R.id.secondPage);
         page3_btn = findViewById(R.id.thridPage);
 
-//        FrameLayout frame = findViewById(R.id.mainFrame);
         home_btn.setOnClickListener(this);
         page2_btn.setOnClickListener(this);
         page3_btn.setOnClickListener(this);
-//        viewPager.setOnPageChangeListener(this);
 
         View homepage = View.inflate(MainActivity.this, R.layout.homepage, null);
         View page2 = View.inflate(MainActivity.this, R.layout.page2, null);
