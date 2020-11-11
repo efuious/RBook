@@ -14,8 +14,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,ViewPager.OnPageChangeListener {
 
     private Button home_btn;
-    private Button page2_btn;
-    private Button page3_btn;
+    private Button library_btn;
+    private Button profile_btn;
 
     MyPagerAdapter adapter;
     ViewPager viewPager;
@@ -31,20 +31,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void init() {
         home_btn = findViewById(R.id.homePage);
-        page2_btn = findViewById(R.id.secondPage);
-        page3_btn = findViewById(R.id.thridPage);
-
+        library_btn = findViewById(R.id.secondPage);
+        profile_btn = findViewById(R.id.thridPage);
         home_btn.setOnClickListener(this);
-        page2_btn.setOnClickListener(this);
-        page3_btn.setOnClickListener(this);
+        library_btn.setOnClickListener(this);
+        profile_btn.setOnClickListener(this);
 
         View homepage = View.inflate(MainActivity.this, R.layout.homepage, null);
-        View page2 = View.inflate(MainActivity.this, R.layout.page2, null);
-        View page3 = View.inflate(MainActivity.this, R.layout.page3, null);
+        View library = View.inflate(MainActivity.this, R.layout.library, null);
+        View profile = View.inflate(MainActivity.this, R.layout.profile, null);
         views = new ArrayList<View>();
         views.add((homepage));
-        views.add(page2);
-        views.add(page3);
+        views.add(library);
+        views.add(profile);
 
         this.adapter = new MyPagerAdapter(views);
 
@@ -62,11 +61,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.secondPage:
                 viewPager.setCurrentItem(1);
-                Toast.makeText(this, "Page2", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Library", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.thridPage:
                 viewPager.setCurrentItem(2);
-                Toast.makeText(this, "Page3", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
